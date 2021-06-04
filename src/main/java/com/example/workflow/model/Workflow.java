@@ -18,7 +18,6 @@ public class Workflow implements Serializable{
 	long version ;
 	Date dateCreated ;
 	Date dateModified ;
-//	String filePath;
 	boolean draft;
 	String xml;
 	String action;
@@ -27,7 +26,7 @@ public class Workflow implements Serializable{
         String file = (this.draft)?"draft":"valid";
         return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file;
     }
-	public String getPath(){
+	public String getFilePath(){
         String file = (this.draft)?"draft":"valid";
         return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file+"\\"+this.name+"_"+this.version+this.extension;
     }

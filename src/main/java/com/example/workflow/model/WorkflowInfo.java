@@ -8,7 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-
+import lombok.extern.log4j.Log4j;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString
 public class WorkflowInfo implements Serializable{
 	/**
@@ -22,9 +22,9 @@ public class WorkflowInfo implements Serializable{
 	long version;
 	Date dateCreated;
 	Date dateModified;
-	String filePath;
 	boolean draft;
 	String action;
+	String extension;
 	
 	public WorkflowInfo(Workflow workflow){
 		this.customer= workflow.getCustomer();
@@ -33,8 +33,18 @@ public class WorkflowInfo implements Serializable{
 		this.version= workflow.getVersion();
 		this.dateCreated = workflow.getDateCreated();
 		this.dateModified=workflow.getDateModified();
-		this.filePath=workflow.getPath();
 		this.draft=workflow.isDraft();
 		this.action=workflow.getAction();
+		this.extension=workflow.getExtension();
 	}
+
+	public String getDirPath(){
+        String file = (this.draft)?"draft":"valid";
+        return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file;
+    }
+	public String getFilePath(){
+        String file = (this.draft)?"draft":"valid";
+        return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file+"\\"+this.name+"_"+this.version+this.extension;
+    }
+
 }

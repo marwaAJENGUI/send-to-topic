@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.springframework.stereotype.Service;
 
 import com.example.workflow.model.Workflow;
+import com.example.workflow.model.WorkflowInfo;
 
 import lombok.extern.log4j.Log4j;
 
@@ -48,7 +49,7 @@ public class FileService {
 	public void creatXMLFile (Workflow workflow) {
 		log.debug("FileService->creatXMLFile( workflow) : creation xml file ...");
 		this.creatDirectory(basePath+workflow.getDirPath());
-		this.creatFile(basePath+workflow.getPath(), workflow.getXml());
+		this.creatFile(basePath+workflow.getFilePath(), workflow.getXml());
 		log.debug("FileService->creatXMLFile( workflow) : xml file created ...");
 	}
 }
