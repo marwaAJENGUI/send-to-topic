@@ -24,10 +24,10 @@ public class Workflow implements Serializable{
 	String extension=".bpmn20.xml";
 	public String getDirPath(){
         String file = (this.draft)?"draft":"valid";
-        return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file;
+        return "Workflow/"+this.customer+"/"+this.module+"/"+file;
     }
 	public String getFilePath(){
         String file = (this.draft)?"draft":"valid";
-        return "\\Workflow\\"+this.customer+"\\"+this.module+"\\"+file+"\\"+this.name+"_"+this.version+this.extension;
+        return "Workflow/"+this.customer+"/"+this.module+"/"+file+"/"+this.name+"_"+this.version+this.extension;
     }
 }

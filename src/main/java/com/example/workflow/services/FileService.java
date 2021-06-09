@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Service
 public class FileService {
-	static String basePath = System.getProperty("user.dir") + "\\src\\main\\resources";
+	static String basePath = System.getProperty("user.dir") + "\\src\\main\\resources\\";
 
 	public void creatDirectory(String directoryName) {
 		log.debug(">>>>>>>>>>> FileService->creatDirectory("+ directoryName+") : creation xml file ...");
