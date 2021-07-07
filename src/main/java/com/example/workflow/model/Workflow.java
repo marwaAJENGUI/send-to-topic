@@ -22,7 +22,8 @@ public class Workflow implements Serializable{
 	String xml;
 	String action;
 	String extension=".bpmn20.xml";
-	
+	String processDefinitionId;
+
 	public Workflow(WorkflowInfo workflowInfo){
 		this.id=workflowInfo.getId();
 		this.customer= workflowInfo.getCustomer();
@@ -34,6 +35,7 @@ public class Workflow implements Serializable{
 		this.draft=workflowInfo.isDraft();
 		this.action=workflowInfo.getAction();
 		this.extension=workflowInfo.getExtension();
+		this.processDefinitionId=workflowInfo.getProcessDefinitionId();
 	}
 	
 	public String getDirPath(){

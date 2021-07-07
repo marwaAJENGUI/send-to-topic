@@ -35,7 +35,7 @@ public class ProduceMessageController {
         log.debug(">>>>>>>>>>> ProduceMessageController->sendMessage: start ...");
     	fileService.creatXMLFile(workflow);
     	WorkflowInfo workflowInfo = new WorkflowInfo(workflow);
-    	workflowInfoService.addWorkflowInfo(workflowInfo);
+    	workflowInfo=workflowInfoService.addWorkflowInfo(workflowInfo);
         workflowInfo=jmsProducer.sendMessage(workflowInfo);
         log.debug(">>>>>>>>>>> ProduceMessageController->sendMessage: end!");
         return workflowInfo;

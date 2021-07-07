@@ -32,7 +32,8 @@ public class WorkflowInfo implements Serializable{
 	boolean draft;
 	String action;
 	String extension;
-	
+	String processDefinitionId;
+
 	public WorkflowInfo(Workflow workflow){
 		this.customer= workflow.getCustomer();
 		this.module= workflow.getModule();
@@ -43,6 +44,7 @@ public class WorkflowInfo implements Serializable{
 		this.draft=workflow.isDraft();
 		this.action=workflow.getAction();
 		this.extension=workflow.getExtension();
+		this.processDefinitionId=workflow.getProcessDefinitionId();
 	}
 
 	public String getDirPath(){
