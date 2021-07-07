@@ -9,6 +9,23 @@ spring:
     pub-sub-domain: true
     template:
       delivery-mode: persistent
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/workflow-info?useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  data:
+    rest:
+      basePath: /api
+logging:
+  level:
+    com.example.workflow:
+      DEBUG
+  file: F:/pfe/log/log.log
 server:
   port: 8752
 topic: workflow
